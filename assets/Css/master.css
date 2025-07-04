@@ -18,13 +18,19 @@
     --gradiant-2: #a855f7;
     --gradiant-3: #f472b6;
     --gradiant-4: #fde047;
+    --gray-200: oklch(0.929 0.013 255.508);
+    --hoverd-1: #ffffff55;
 
+    --sec-padding-1: 80px;
+    --sec-padding-2: 160px;
     --trans-1: .3s;
 }
 
 body {
+    /* overflow-x: hidden; */
     font-family: "Be Vietnam Pro", sans-serif;
-    background-color: #000;
+    background-color: var(--gradiant-1);
+    color: #d1d5db !important;
 }
 
 a {
@@ -35,7 +41,13 @@ ul > li {
     list-style-type: none;
 }
 
-
+    .light-overlay {
+            position: absolute;
+            filter: blur(20px);
+            box-shadow: 0 100px 700px 80px var(--gradiant-2);
+            border-radius: 50%;
+            z-index: -1;
+    }
 
 
 /*-----------------------------------*\
@@ -54,6 +66,7 @@ header {
     align-items: center;
     height: var(--h-header);
     justify-content: space-between;
+    z-index: 10;
 }
 
 header .logo-link .logo-text {
@@ -171,17 +184,263 @@ header .list-item {
         }
         &:hover {
             cursor: pointer;
-            background-color: #ffffff15;
+            background-color: var(--hoverd-1);
         }
     }
 }
+/*-----------------------------------*\
+  #Landing
+\*-----------------------------------*/
+.landing-page {
+    position: relative;
+    padding: var(--sec-padding-2) 0 var(--sec-padding-1);
+    /* display: grid; */
+    /* align-items: center; */
+    color: #fff;
+    .img-overlay {
+        position: absolute;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+    .container {
+    position: relative;
+    .ove-1 {
+            top: 0;
+            left: 15%;
+    }
+    }
+    .get-started {
+        border: 1px solid var(--hoverd-1);
+        border-radius: 120px;
+        padding: 4px 12px 4px 4px;
+        max-width: max-content;
+        display: flex;
+        align-items: center;
+        font-size: 14px;
+        word-spacing: 2px;
+        .new {
+            text-transform: capitalize;
+            background-color: #14803d;
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 120px;
+        }
+        .start-text {
+            margin-left: 12px;
+        }
+        &:hover {
+            background-color: var(--hoverd-1);
+        }
+    }
+    .learn-to {
+        .coding-projects {
+            font-size: 64px;
+            margin: 16px 0;
+            line-height: 1.7;
+            > span {
+            background: linear-gradient(
+            to right,
+             var(--gradiant-2),
+             var(--gradiant-3),
+             var(--gradiant-4));
+            background-clip: text;
+            color: transparent;
+            }
+        }
 
+        .dream-job {
+            max-width: 600px;
+            color: var(--gray-200);
+            font-size: 16px;
+        }
+    }
+    .your-skill {
+        display: flex;
+        flex-direction: column;
+        margin: var(--sec-padding-1) 0;
+        > a {
+            max-width: max-content;
+            display: block;
+            padding: 12px 24px;
+            outline: 3px solid var(--hoverd-1);
+            outline-offset: 2px;
+             background: linear-gradient(
+            to right,
+             var(--gradiant-2),
+             var(--gradiant-3));
+            border-radius: 12px;
+            text-transform: capitalize;
+            color: #fff;
+            font-weight: 500;
+            &:hover {
+            background: linear-gradient(
+            to right,
+            rgb(187, 4, 132),
+            var(--gradiant-2),
+            var(--gradiant-3));
+            }
+        }
+        small {
+            margin: 24px 0;
+            font-size: 10px;
+            opacity: .7;
+        }
+    }
+    .companies {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .intro {
+            text-align: center;
+            max-width: 350px;
+            text-transform: capitalize;
+            font-size: 24px;
+            font-weight: 500;
+        }
+        .company-names {
+            padding: 25px;
+            width: 100%;
+            margin-top: 26px;
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            place-items: center;
+            gap: 20px;
+        }
+    }
+    .ove-2 {
+        bottom: 25%;
+        right: 0;
+    }
+}
+/*-----------------------------------*\
+  #Building
+\*-----------------------------------*/
+.building-projects {
+    position: relative;
+    .img-overlay {
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        z-index: -1;
+    }
+    .container {
+        display: grid;
+        place-items: center;
+        .fluid {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            .bracket {
+                position: absolute;
+                bottom: 0;
+                /* transform: translateY(-50%); */
+                &.svg-braket-1 {
+                    left: 0;
+                }
+                &.svg-braket-2 {
+                    right: 0;
+                }
+            }
+            .building {
+                text-align: center;
+                .way-to-learn {
+                    max-width: 650px;
+                    margin: 16px 8px 0;
+                    text-transform: capitalize;
+                    font-size: 48px;
+                    line-height: 1.7;
+                    > span {
+                        background: linear-gradient(
+                        to right,
+                        var(--gradiant-2),
+                        var(--gradiant-3),
+                        var(--gradiant-4));
+                        background-clip: text;
+                        color: transparent;
+                    }
+                }
+                .outstanding {
+                    margin: 8px 0;
+                    font-size: 16px;
+                    opacity: .7;
+                }
+            }
+        }
+    }
+}
 /*-----------------------------------*\
   #Media quires
 \*-----------------------------------*/
-
+/*-----------------------------------*\
+  #CONTAINER
+\*-----------------------------------*/
+.container {
+    margin: 0 auto;
+    padding-inline: 15px;
+}
+/* // Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .container {
+           width: 556px;
+           padding: 15px;
+       }
+}
+/* // Medium devices (tablets, 768px and up) */
+@media (min-width: 768px)  {
+       .container {
+           width: 748px;
+           padding: 15px;
+       }
+}
+/* // Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+       .container{
+           width: 992px;
+           padding: 15px;
+       }
+}
+/* // Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+       .container {
+           width: 1250px;
+           padding: 15px;
+       }
+}
 @media (width < 990px) {
     .nav {
         display: none;
     }
+        .learn-to {
+        .coding-projects {
+            font-size: 48px;
+            line-height: 1.3 !important;
+        }
+    }
 }
+@media (width < 767px) {
+    
+    .company-names {
+     grid-template-columns: repeat(2, 1fr) !important;
+    }
+    .bracket{
+        display: none;
+    }
+}
+@media (max-width: 990px) {
+    .coding-projects {
+        font-size: 48px !important;
+    }
+}
+@media (max-width: 540px) {
+    .coding-projects, .way-to-learn {
+        font-size: 35px !important;
+    }
+}
+@media (max-width: 1200px) {
+    .building-projects .img-overlay {
+        display: none;
+}}
